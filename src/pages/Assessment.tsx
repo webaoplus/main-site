@@ -36,37 +36,54 @@ const Assessment = () => {
     setIsSubmitting(true);
     setError(null);
 
-    try {
-      // Try ERPNext API first
-      const erpNextUrl = `${siteConfig.erpNext.baseUrl}${siteConfig.erpNext.webFormEndpoint}`;
-      
-      const payload = {
-        web_form: siteConfig.erpNext.leadFormName,
-        data: JSON.stringify({
-          lead_name: formData.name,
-          company_name: formData.company,
-          email_id: formData.email,
-          source: "Website - FinOps Assessment",
-          notes: `Cloud Provider: ${formData.cloudProvider}\nMonthly Spend: ${formData.monthlySpend}\nMessage: ${formData.message}`
-        })
-      };
+try {
+  const erpNextUrl =
+    `${siteConfig.erpNext.baseUrl}${siteConfig.erpNext.webFormEndpoint}`;
 
-      const response = await fetch(erpNextUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
+  const payload = {
+    web_form: siteConfig.erpNext.bookassessment,
 
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        // Fallback to mailto
-        throw new Error("API failed");
-      }
-    } catch (err) {
-      // Fallback to mailto
+    data:JSON.stringify( {
+      book_name: formData.name,
+
+      book_email: formData.email,
+
+      book_company_name: formData.company,
+
+      cloud_provider: formData.cloudProvider,
+
+      cloud_spending: formData.monthlySpend,
+
+      additional_information: formData.message,
+
+      status: "Lead"
+    })
+  };
+
+  const response = await fetch(erpNextUrl, {
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify(payload)
+  });
+
+  const result = await response.text();
+  console.log(result);
+  console.log(JSON.stringify(payload, null, 2));
+
+  console.log("STATUS:", response.status);
+  console.log("RESULT:", result);
+
+  if (response.ok) {
+    setIsSubmitted(true);
+  } else {
+    throw new Error("API failed");
+  }
+
+} catch (err) {      // Fallback to mailto
       const subject = `FinOps Assessment Request from ${formData.name}`;
       const body = `
 Name: ${formData.name}

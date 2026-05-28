@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "AO+ Solutions Pvt Ltd",
   tagline: "Intelligent Infrastructure. Made in India.",
   shortDesc: "A corporate hub for multiple owned brands, focusing on AI, Cloud, and Digital Marketing solutions for Indian MSMEs.",
-  email: "connect@aoplus.in",
+  email: "usnandagopa@gmail.com",
   altEmail: "hello@aoplus.in",
   phone: "+91-XXXXXXXXXX",
   address: {
@@ -69,10 +69,13 @@ export const siteConfig = {
     msmeTarget: "63M+"
   },
   erpNext: {
-    baseUrl: "https://biz.aoplus.in",
-    webFormEndpoint: "/api/method/frappe.website.doctype.web_form.web_form.accept",
-    leadFormName: "lead-capture"
-  },
+  baseUrl: "https://biz.aoplus.in",
+
+  webFormEndpoint: "/api/method/frappe.website.doctype.web_form.web_form.accept",
+  bookassessment: "book-assessment",
+
+  leadFormName: "website-contact"
+},
   n8n: {
     webhookUrl: ""
   }
