@@ -36,36 +36,51 @@ const Contact = () => {
     setIsSubmitting(true);
     setError(null);
 
-    try {
-      // Try ERPNext API first
-      const erpNextUrl = `${siteConfig.erpNext.baseUrl}${siteConfig.erpNext.webFormEndpoint}`;
-      
-      const payload = {
-        web_form: siteConfig.erpNext.leadFormName,
-        data: JSON.stringify({
-          lead_name: formData.name,
-          company_name: formData.company,
-          email_id: formData.email,
-          phone: formData.phone,
-          source: "Website - Contact Form",
-          notes: `Interest: ${formData.interest}\nMessage: ${formData.message}`
-        })
-      };
+     try {
+  // Try ERPNext API first
+  const erpNextUrl =
+    `${siteConfig.erpNext.baseUrl}${siteConfig.erpNext.webFormEndpoint}`;
 
-      const response = await fetch(erpNextUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
+  const payload = {
+    web_form: siteConfig.erpNext.leadFormName,
 
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        throw new Error("API failed");
-      }
-    } catch (err) {
+    data: JSON.stringify({
+      contact_name: formData.name,
+
+      contact_email: formData.email,
+
+      contact_company_name: formData.company,
+
+      contact_phone_no: formData.phone,
+
+      contact_interest: formData.interest,
+
+      contact_message: formData.message
+    })
+  };
+
+  const response = await fetch(erpNextUrl, {
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify(payload)
+  });
+  const result = await response.json();
+
+console.log("STATUS:", response.status);
+console.log("RESULT:", result);
+
+  if (response.ok) {
+    setIsSubmitted(true);
+  } else {
+    // Fallback to mailto
+    throw new Error("API failed");
+  }
+
+} catch (err) {
       // Fallback to mailto
       const subject = `Contact Form: ${formData.name} - ${formData.interest}`;
       const body = `

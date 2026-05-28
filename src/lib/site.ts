@@ -69,10 +69,13 @@ export const siteConfig = {
     msmeTarget: "63M+"
   },
   erpNext: {
-    baseUrl: "https://biz.aoplus.in",
-    webFormEndpoint: "/api/method/frappe.website.doctype.web_form.web_form.accept",
-    leadFormName: "lead-capture"
-  },
+  baseUrl: "https://biz.aoplus.in",
+
+  webFormEndpoint: "/api/method/frappe.website.doctype.web_form.web_form.accept",
+  bookassessment: "book-assessment",
+
+  leadFormName: "website-contact"
+},
   n8n: {
     webhookUrl: ""
   }
