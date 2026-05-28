@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "AO+ Solutions Pvt Ltd",
   tagline: "Intelligent Infrastructure. Made in India.",
   shortDesc: "A corporate hub for multiple owned brands, focusing on AI, Cloud, and Digital Marketing solutions for Indian MSMEs.",
-  email: "usnandagopa@gmail.com",
+  email: "connect@aoplus.in",
   altEmail: "hello@aoplus.in",
   phone: "+91-XXXXXXXXXX",
   address: {
