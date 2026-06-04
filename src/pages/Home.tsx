@@ -309,7 +309,6 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-    </>
   );
 };
 
