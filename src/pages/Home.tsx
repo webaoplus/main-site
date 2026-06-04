@@ -21,8 +21,6 @@ import { starterKits } from "@/lib/starter-kits";
 
 const Home = () => {
   const metrics = [
-    { value: 250, suffix: "%", label: "YoY Growth" },
-    { value: 100, prefix: "₹", suffix: "+ Cr", label: "Cloud Managed" },
     { value: 5, suffix: "", label: "Owned Brands" },
     { value: 35, suffix: "%", label: "Avg Cost Reduction" }
   ];
@@ -370,7 +368,6 @@ const Home = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               { label: "ARR Target", value: "₹12.5 Cr" },
-              { label: "YoY Growth", value: "250%" },
               { label: "Active Verticals", value: "4+" },
               { label: "Owned Brands", value: "5" }
             ].map((stat, idx) => (
