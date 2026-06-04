@@ -5,10 +5,10 @@ export const siteConfig = {
   shortDesc: "A corporate hub for multiple owned brands, focusing on AI, Cloud, and Digital Marketing solutions for Indian MSMEs.",
   email: "connect@aoplus.in",
   altEmail: "hello@aoplus.in",
-  phone: "+91-XXXXXXXXXX",
+  phone: "+91-7977875818",
   address: {
-    street: "F-805 Riverdale, Casa Rio",
-    city: "Palava City, Dombivali (E)",
+    street: "1-605, Lodha Signet, Palava",
+    city: "Manpada, Dombivli (E)",
     state: "Thane",
     pincode: "421204",
     country: "India"
@@ -16,7 +16,7 @@ export const siteConfig = {
   foundingYear: 2019,
   founders: ["Founder Name"],
   cin: "U72900MH2019PTC330056",
-  gstin: "27XXXXXXXXX",
+  gstin: "27AASCA6842P2ZQ",
   social: {
     twitter: "https://twitter.com/aoplusin",
     linkedin: "https://linkedin.com/company/aoplus-solutions",
@@ -24,9 +24,7 @@ export const siteConfig = {
   },
   navLinks: [
     { label: "Services", href: "/services", external: false },
-    { label: "Brands", href: "/brands", external: false },
     { label: "About", href: "/about", external: false },
-    { label: "Investors", href: "/investors", external: false },
     { label: "Careers", href: "/careers", external: false },
     { label: "Biz Portal", href: "https://biz.aoplus.in", external: true }
   ],
@@ -34,17 +32,8 @@ export const siteConfig = {
     company: [
       { label: "About Us", href: "/about" },
       { label: "Our Services", href: "/services" },
-      { label: "Investor Relations", href: "/investors" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" }
-    ],
-    brands: [
-      { label: "Prodory", href: "https://prodory.com", external: true },
-      { label: "DigiAds.click", href: "https://digiads.click", external: true },
-      { label: "IndoMbivili.com", href: "https://indombivili.com", external: true },
-      { label: "PalavaNews.com", href: "https://palavanews.com", external: true },
-      { label: "SatvikCloud.com", href: "https://satvikcloud.com", external: true },
-      { label: "PrimeSale.in", href: "https://primesale.in", external: true }
     ],
     resources: [
       { label: "Growth Audit", href: "/growth-audit" },
