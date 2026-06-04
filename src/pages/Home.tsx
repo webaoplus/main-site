@@ -138,6 +138,9 @@ const Home = () => {
     </CardContent>
   </Card>
 </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Quick Starter Kits Section */}
       <section className="py-24 bg-white dark:bg-slate-950">
@@ -309,6 +312,7 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+    </>
   );
 };
 
