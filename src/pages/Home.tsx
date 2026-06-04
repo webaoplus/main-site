@@ -15,14 +15,14 @@ import { Badge } from "@/components/ui/badge";
 import SEO, { websiteStructuredData } from "@/components/shared/SEO";
 import AnimatedCounter from "@/components/shared/AnimatedCounter";
 import QuickStarterCard from "@/components/shared/QuickStarterCard";
-import BrandCarousel from "@/components/shared/BrandCarousel";
 import { siteConfig } from "@/lib/site";
 import { starterKits } from "@/lib/starter-kits";
 
 const Home = () => {
-const metrics = [
-  { value: 35, suffix: "%", prefix: "", label: "Avg Cost Reduction" }
-];
+  const metrics = [
+    { value: 35, suffix: "%", prefix: "", label: "Avg Cost Reduction" }
+  ];
+
   const features = [
     "AI-powered cloud optimization",
     "ERPNext implementation",
@@ -112,34 +112,32 @@ const metrics = [
               </div>
             </motion.div>
 
-            {/* Right Content - Metrics */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {metrics.map((metric, idx) => (
-                <Card 
-                  key={idx} 
-                  className={`${idx === 0 ? "col-span-2" : ""} bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm`}
-                >
-                  <CardContent className="p-6">
-                    <p className="text-4xl sm:text-5xl font-bold text-primary mb-2">
-                      <AnimatedCounter 
-                        value={metric.value} 
-                        prefix={metric.prefix}
-                        suffix={metric.suffix}
-                      />
-                    </p>
-                    <p className="text-slate-600 dark:text-slate-400">{metric.label}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
+{/* Right Content - Metrics */}
+<motion.div
+  initial={{ opacity: 0, x: 30 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+  className="flex items-center justify-center"
+>
+  <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm w-full max-w-sm">
+    <CardContent className="p-10 text-center">
+      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+        <TrendingUp className="w-8 h-8 text-primary" />
+      </div>
+      <p className="text-6xl font-bold text-primary mb-3">
+        <AnimatedCounter 
+          value={35} 
+          prefix=""
+          suffix="%"
+        />
+      </p>
+      <p className="text-xl text-slate-600 dark:text-slate-400">Avg Cost Reduction</p>
+      <p className="text-sm text-slate-500 dark:text-slate-500 mt-2">
+        Across cloud infrastructure for our clients
+      </p>
+    </CardContent>
+  </Card>
+</motion.div>
 
       {/* Quick Starter Kits Section */}
       <section className="py-24 bg-white dark:bg-slate-950">
@@ -168,7 +166,6 @@ const metrics = [
           </div>
         </div>
       </section>
-
 
       {/* Services Overview Section */}
       <section className="py-24 bg-white dark:bg-slate-950">
@@ -310,17 +307,6 @@ const metrics = [
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
           </motion.div>
-        </div>
-      </section>
-
-          <div className="text-center">
-            <Link to="/investors">
-              <Button variant="outline" className="gap-2">
-                View Investor Relations
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
     </>
