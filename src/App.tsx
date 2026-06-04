@@ -6,9 +6,7 @@ import SEO, { organizationStructuredData } from "@/components/shared/SEO";
 // Pages
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
-import Brands from "@/pages/Brands";
 import About from "@/pages/About";
-import Investors from "@/pages/Investors";
 import Careers from "@/pages/Careers";
 import Assessment from "@/pages/Assessment";
 import Contact from "@/pages/Contact";
@@ -27,9 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/brands" element={<Brands />} />
             <Route path="/about" element={<About />} />
-            <Route path="/investors" element={<Investors />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/contact" element={<Contact />} />
