@@ -20,11 +20,10 @@ import { siteConfig } from "@/lib/site";
 import { starterKits } from "@/lib/starter-kits";
 
 const Home = () => {
-  const metrics = [
-    { value: 5, suffix: "", label: "Owned Brands" },
-    { value: 35, suffix: "%", label: "Avg Cost Reduction" }
-  ];
-
+const metrics = [
+  { value: 5, suffix: "", prefix: "", label: "Owned Brands" },
+  { value: 35, suffix: "%", prefix: "", label: "Avg Cost Reduction" }
+];
   const features = [
     "AI-powered cloud optimization",
     "ERPNext implementation",
