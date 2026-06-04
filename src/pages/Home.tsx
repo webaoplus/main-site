@@ -21,7 +21,6 @@ import { starterKits } from "@/lib/starter-kits";
 
 const Home = () => {
 const metrics = [
-  { value: 5, suffix: "", prefix: "", label: "Owned Brands" },
   { value: 35, suffix: "%", prefix: "", label: "Avg Cost Reduction" }
 ];
   const features = [
@@ -170,37 +169,6 @@ const metrics = [
         </div>
       </section>
 
-      {/* Brand Network Section */}
-      <section className="py-24 bg-blue-50 dark:bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <Badge className="mb-4" variant="secondary">Ecosystem</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Our Brand Ecosystem
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Six specialized brands, one unified vision for Indian MSMEs
-            </p>
-          </motion.div>
-
-          <BrandCarousel />
-
-          <div className="text-center mt-12">
-            <Link to="/brands">
-              <Button variant="outline" className="gap-2">
-                View All Brands
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Services Overview Section */}
       <section className="py-24 bg-white dark:bg-slate-950">
@@ -344,48 +312,6 @@ const metrics = [
           </motion.div>
         </div>
       </section>
-
-      {/* Investor Snapshot Section */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <Badge className="mb-4" variant="secondary">Investors</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Investor Snapshot
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Building the future of Indian MSME technology infrastructure
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              { label: "ARR Target", value: "₹12.5 Cr" },
-              { label: "Active Verticals", value: "4+" },
-              { label: "Owned Brands", value: "5" }
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-              >
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <p className="text-3xl font-bold text-primary mb-1">{stat.value}</p>
-                    <p className="text-slate-600 dark:text-slate-400">{stat.label}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
 
           <div className="text-center">
             <Link to="/investors">
