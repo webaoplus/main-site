@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Twitter, Linkedin, Github, ExternalLink, MapPin, Mail } from "lucide-react";
+import { Twitter, Linkedin, Github, MapPin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 const Footer = () => {
@@ -65,26 +65,6 @@ const Footer = () => {
                   >
                     {link.label}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Brand Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-6">Our Brands</h3>
-            <ul className="space-y-3">
-              {siteConfig.footerLinks.brands.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-white transition-colors text-sm flex items-center gap-1"
-                  >
-                    {link.label}
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
                 </li>
               ))}
             </ul>
